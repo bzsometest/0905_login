@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商城首页</title>
+</head>
+<body>
+<h2>商城首页</h2>
+<a href="login.html">登录</a> | <a href="register.html">注册</a>
+<br>
+<a href="userCenter.jsp">用户中心</a> | <a href="productAll.action">所有商品</a>
+<br>
+<input type="text" id="user_uid" placeholder="请输入用户UID" value="1">
+<button id="btn_check">查询用户信息</button>
+
+<script>
+    var btn_check = document.getElementById("btn_check");
+    btn_check.onclick = function (ev) {
+        var uid_div = document.getElementById("user_uid");
+        var uid = parseInt(uid_div.value);
+        if (isNaN(uid)) {
+            alert("UID输入不合法！")
+        } else {
+            window.location = "userShow.action?uid=" + uid;
+        }
+    }
+
+</script>
+</body>
+</html>
