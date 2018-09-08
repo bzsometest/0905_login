@@ -12,8 +12,8 @@
 
         .product_info {
             float: left;
-            margin: 10px 0px 10px 10px;
-            width: 270px;
+            margin: 10px 0px 10px 20px;
+            width: 260px;
             height: 350px;
             border: 1px solid blue;
             padding: 5px;
@@ -21,7 +21,7 @@
         }
 
         .product_info img {
-            width: 260px;
+            width: 250px;
             height: 300px;
         }
     </style>

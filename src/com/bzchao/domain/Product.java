@@ -1,10 +1,10 @@
 package com.bzchao.domain;
 
 public class Product {
-    Integer pid;
-    String pic;
-    String name;
-    String price;
+    private Integer pid;
+    private String pic;
+    private String name;
+    private Double price;
 
     public Integer getPid() {
         return pid;
@@ -30,11 +30,11 @@ public class Product {
         this.name = name;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

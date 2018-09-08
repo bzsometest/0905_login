@@ -56,7 +56,7 @@ public class UserRegisterServlet extends HttpServlet {
         if (isReg) {
             resp.getWriter().println("注册成功！正在跳转至登录页面...");
             resp.setStatus(302);
-            resp.setHeader("refresh", "5;login.html");
+            resp.setHeader("refresh", "5;login.jsp");
         } else {
             resp.getWriter().println("注册失败，用户名可能已被注册！");
             resp.setStatus(302);

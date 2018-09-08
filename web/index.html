@@ -5,13 +5,14 @@
 </head>
 <body>
 <h2>商城首页</h2>
-<a href="login.html">登录</a> | <a href="register.html">注册</a>
-<br>
-<a href="userCenter.jsp">用户中心</a> | <a href="productAll.action">所有商品</a>
-<br>
-<input type="text" id="user_uid" placeholder="请输入用户UID" value="1">
+<hr>
+<a href="login.jsp">登录</a> | <a href="register.html">注册</a> | <a href="userCenter.jsp">用户中心</a>
+<hr>
+<a href="productAll.action">所有商品</a> | <a href="shopCart.jsp">购物车</a>
+<hr>
+<input type="text" id="user_uid" placeholder="请输入用户UID" value="1" size="12">
 <button id="btn_check">查询用户信息</button>
-
+<hr>
 <script>
     var btn_check = document.getElementById("btn_check");
     btn_check.onclick = function (ev) {

@@ -60,7 +60,7 @@
     <div class="product_introduce">
         <span><%=productNow.getName()%> </span><br/>
         <span>价格： <%=productNow.getPrice()%></span><br/>
-        <span><a href="productAddCart.action?pid=<%=productNow.getPid()%>">加入购物车</a></span>
+        <span><a href="shopCartAdd.action?pid=<%=productNow.getPid()%>">加入购物车</a></span>
     </div>
     <%} else {%>
     <p style="color: red">未查询到此商品！</p>

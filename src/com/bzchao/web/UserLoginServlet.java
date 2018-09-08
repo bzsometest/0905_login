@@ -37,6 +37,45 @@ public class UserLoginServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset=UTF-8");
+
+        //对验证码信息校验
+        boolean isValidCode = validCheckCode(req);
+        if (!isValidCode) {
+            req.setAttribute("errorMsg", "验证码错误！");
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+            return;
+        }
+
+        //进行登录操作
+        login(req, resp);
+
+    }
+
+    /**
+     * 对验证码进行校验
+     *
+     * @param req
+     * @return
+     */
+    public boolean validCheckCode(HttpServletRequest req) {
+        //获得用户提交的Code
+        String userCode = req.getParameter("checkCode");
+        //获得生成的code
+        String checkCode = (String) req.getSession().getAttribute("checkCode");
+        if (userCode == null || checkCode == null) {
+            return false;
+        }
+        return checkCode.equalsIgnoreCase(userCode);
+    }
+
+    /**
+     * 用户登录操作
+     *
+     * @param req
+     * @param resp
+     * @throws IOException
+     */
+    public void login(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         if (Validates.isEmpty(username) || Validates.isEmpty(password)) {
