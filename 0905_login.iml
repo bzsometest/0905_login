@@ -22,5 +22,6 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="mylib" level="project" />
     <orderEntry type="library" name="commons-beanutils-1.8.3" level="project" />
+    <orderEntry type="library" name="standard" level="project" />
   </component>
 </module>

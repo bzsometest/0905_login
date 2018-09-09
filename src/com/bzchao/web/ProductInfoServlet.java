@@ -1,7 +1,7 @@
 package com.bzchao.web;
 
-import com.bzchao.dao.ProductImpl;
 import com.bzchao.domain.Product;
+import com.bzchao.service.ProductServiceImpl;
 import com.bzchao.utils.CookieUtils;
 import com.bzchao.utils.ProductPidUtils;
 
@@ -59,7 +59,7 @@ public class ProductInfoServlet extends HttpServlet {
         // List<Product> productList = new ProductImpl().findById(pidArray);
 
         //有序查找商品
-        List<Product> productList = new ProductImpl().findByIdOrder(pidArray);
+        List<Product> productList = new ProductServiceImpl().findByIdOrder(pidArray);
         req.setAttribute("historys", productList);
     }
 
@@ -71,7 +71,7 @@ public class ProductInfoServlet extends HttpServlet {
     private void showProductById(HttpServletRequest req) throws NumberFormatException {
         String pidString = req.getParameter("pid");
         int pid = Integer.valueOf(pidString);
-        Product product = new ProductImpl().findById(pid);
+        Product product = new ProductServiceImpl().findById(pid);
         req.setAttribute("product", product);
     }
 

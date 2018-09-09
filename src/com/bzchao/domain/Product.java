@@ -2,9 +2,18 @@ package com.bzchao.domain;
 
 public class Product {
     private Integer pid;
-    private String pic;
     private String name;
     private Double price;
+    private String pic;
+
+    public Product() {
+    }
+
+    public Product(String name, Double price, String pic) {
+        this.pic = pic;
+        this.name = name;
+        this.price = price;
+    }
 
     public Integer getPid() {
         return pid;

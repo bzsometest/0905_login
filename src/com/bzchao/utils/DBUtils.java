@@ -35,7 +35,9 @@ public class DBUtils {
         System.out.println("获取连接Connection：" + count++);
 
         try {
-            return dataSource.getConnection();
+            Connection connection = dataSource.getConnection();
+            System.out.println("获取成功！");
+            return connection;
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 生成随机图片，用来作为验证码
  * 删除生成汉字验证码
+ * 调节验证码宽度，将不会导致显示不完整
  */
 @WebServlet("/checkCode.action")
 public class CheckCodeServlet extends HttpServlet {
@@ -163,7 +164,7 @@ public class CheckCodeServlet extends HttpServlet {
             g.drawString(ch, x, 20);
             // 反向角度
             g.rotate(-degree * Math.PI / 180, x, 20);
-            x += 30;
+            x += (WIDTH - 10) / 4;
         }
         return sb.toString();
     }

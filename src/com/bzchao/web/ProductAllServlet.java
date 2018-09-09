@@ -1,7 +1,7 @@
 package com.bzchao.web;
 
-import com.bzchao.dao.ProductImpl;
 import com.bzchao.domain.Product;
+import com.bzchao.service.ProductServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ProductAllServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Product> products = new ProductImpl().findAll();
+        List<Product> products = new ProductServiceImpl().findAll();
         req.setAttribute("products", products);
         req.getRequestDispatcher("/productAll.jsp").forward(req, resp);
     }

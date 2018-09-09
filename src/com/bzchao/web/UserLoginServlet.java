@@ -41,7 +41,7 @@ public class UserLoginServlet extends HttpServlet {
         //对验证码信息校验
         boolean isValidCode = validCheckCode(req);
         if (!isValidCode) {
-            req.setAttribute("errorMsg", "验证码错误！");
+            req.setAttribute("message", "验证码错误！");
             req.getRequestDispatcher("/login.jsp").forward(req, resp);
             return;
         }

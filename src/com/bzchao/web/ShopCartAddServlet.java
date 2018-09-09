@@ -1,8 +1,8 @@
 package com.bzchao.web;
 
-import com.bzchao.dao.ProductImpl;
 import com.bzchao.domain.Product;
 import com.bzchao.domain.ShopCart;
+import com.bzchao.service.ProductServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +18,7 @@ public class ShopCartAddServlet extends HttpServlet {
         String pidString = req.getParameter("pid");
         Integer pid = Integer.valueOf(pidString);
         //查询到新增商品
-        Product product = new ProductImpl().findById(pid);
+        Product product = new ProductServiceImpl().findById(pid);
         //获得用户购物车
         ShopCart shopCart = getShopCart(req);
         //向购物车中添加商品

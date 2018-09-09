@@ -7,5 +7,7 @@
 		<property name="user">root</property>
 		<property name="password">root</property>
 
+		<!--最大空闲时间，3600秒内未使用则连接被丢弃。若为0则永不丢弃。默认值: 0 -->
+		<property name="maxIdleTime" value="30"/>
 	</default-config>
 </c3p0-config>
